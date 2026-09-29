@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="./script/main.js" defer></script>
+  </head>
+  <body>
+    <!-- 상단 광고 -->
+    <div class="top-ad">
+      <img src="./img/h_banner1.jpg" alt="상단 광고" />
+
+      <button type="button" class="top-ad-close" aria-label="상단 광고 닫기">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <!-- //상단 광고 -->
+
+    <!-- header -->
+    <header class="header">
+      <div class="header-inner inner">
+        <!-- 상단 유틸 -->
+        <div class="header-util">
+          <ul class="util-left">
+            <li><a href="#">VIP LOUNGE</a></li>
+            <li><a href="#">멤버십</a></li>
+            <li><a href="#">고객센터</a></li>
+          </ul>
+
+          <ul class="util-right">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">빠른예매</a></li>
+          </ul>
+        </div>
+        <!-- //상단 유틸 -->
+
+        <!-- 메인 메뉴 -->
+        <div class="header-main">
+          <div class="main-left">
+            <button class="menu-btn">
+              <img src="./img/ham_bar.png" alt="전체 메뉴 열기" />
+            </button>
+            <button class="search-btn">
+              <img src="./img/search.png" alt="검색 열기" />
+            </button>
+
+            <nav class="gnb-left" aria-label="영화 및 예매 메뉴">
+              <ul>
+                <li class="gnb-item" data-menu="movie">
+                  <a href="#">영화</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">전체영화</a></li>
+                  </ul>
+                </li>
+                <li class="gnb-item" data-menu="reserve">
+                  <a href="#">예매</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">빠른예매</a></li>
+                    <li><a href="#">상영시간표</a></li>
+                    <li><a href="#">더 부티크 프라이빗 예매</a></li>
+                  </ul>
+                </li>
+                <li class="gnb-item" data-menu="theater">
+                  <a href="#">극장</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">전체극장</a></li>
+                    <li><a href="#">특별관</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <h1 class="logo">
+            <a href="#">
+              <img src="./img/logo_white.png" alt="메가박스 홈" />
+            </a>
+          </h1>
+
+          <div class="main-right">
+            <nav class="gnb-right" aria-label="이벤트 및 혜택 메뉴">
+              <ul>
+                <li class="gnb-item" data-menu="event">
+                  <a href="#">이벤트</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">진행중 이벤트</a></li>
+                    <li><a href="#">지난 이벤트</a></li>
+                    <li><a href="#">당첨자발표</a></li>
+                  </ul>
+                </li>
+                <li class="gnb-item">
+                  <a href="#">스토어</a>
+                </li>
+                <li class="gnb-item" data-menu="benefit">
+                  <a href="#">혜택</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">메가박스 멤버십</a></li>
+                    <li><a href="#">제휴/할인</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+            <button
+              type="button"
+              class="timetable-btn"
+              aria-label="상영시간표 보기"
+            >
+              <img src="./img/time_table.png" alt="" />
+            </button>
+            <button type="button" class="mypage-btn" aria-label="나의 메가박스">
+              <img src="./img/person.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <!-- //메인 메뉴 -->
+      </div>
+    </header>
+    <!-- //header -->
+
+    <main id="main-content" tabindex="-1">
+      <!-- section01 -->
+      <section class="boxoffice">
+        <div class="inner">
+          <!-- 상단 -->
+          <div class="boxoffice-top">
+            <h2 id="boxoffice-title">박스오피스</h2>
+
+            <a href="#" class="more-movie">
+              더 많은 영화보기 <img src="./img/plus.png" alt="" />
+            </a>
+          </div>
+          <!-- //상단 -->
+
+          <!-- 카드 4개 -->
+          <div class="movie-list">
+            <!-- card -->
+            <div class="movie-card">
+              <div class="poster">
+                <img src="./img/movie1.jpg" alt="박스오피스 1위 영화 포스터" />
+                <span class="rank">1</span>
+
+                <a
+                  href="#"
+                  class="movie-overlay"
+                  aria-label="극장판 치이카와: 인어 섬의 비밀 상세정보"
+                >
+                  <p class="movie-summary">
+                    어느 날, 광장에서 쉬고 있던 치이카와와 가르마 앞에 얼굴에
+                    전단지를 붙인 토끼가 나타난다. 그곳엔 "특별한 섬으로의
+                    초대"라는 글귀가 적혀 있는데...<br />
+                    섬에서 간단한 토벌만 해도 보수 100배!<br />
+                    솔깃한 문구에 이끌린 치이카와와 친구들은 섬에서 열리는
+                    행사에 참가하기로 한다.
+                  </p>
+
+                  <div class="movie-score">
+                    <span>관람평</span>
+                    <strong>9.4</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="movie-btns">
+                <button
+                  type="button"
+                  class="like-btn"
+                  aria-label="극장판 치이카와: 인어 섬의 비밀 좋아요"
+                  aria-pressed="false"
+                >
+                  <span class="heart-icon" aria-hidden="true"></span>
+                  <span class="like-count">4.9k</span>
+                </button>
+
+                <a href="#" class="reserve-btn">예매</a>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <div class="poster">
+                <img src="./img/movie2.png" alt="박스오피스 2위 영화 포스터" />
+                <span class="rank">2</span>
+
+                <a
+                  href="#"
+                  class="movie-overlay"
+                  aria-label="암살자(들) 상세정보"
+                >
+                  <p class="movie-summary">
+                    1974년 8월 15일, 대한민국을 충격에 빠뜨린 영부인 저격사건의
+                    의혹과 배후를 추적하는 이야기
+                  </p>
+
+                  <div class="movie-score">
+                    <span>관람평</span>
+                    <strong>8.5</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="movie-btns">
+                <button
+                  type="button"
+                  class="like-btn"
+                  aria-label="암살자(들) 좋아요"
+                  aria-pressed="false"
+                >
+                  <span class="heart-icon" aria-hidden="true"></span>
+                  <span class="like-count">802</span>
+                </button>
+
+                <a href="#" class="reserve-btn">예매</a>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <div class="poster">
+                <img src="./img/movie3.jpg" alt="박스오피스 3위 영화 포스터" />
+                <span class="rank">3</span>
+
+                <a
+                  href="#"
+                  class="movie-overlay"
+                  aria-label="타짜:벨제붑의 노래 상세정보"
+                >
+                  <p class="movie-summary">
+                    중세 유럽, 종교인들은 카드가 악마의 도구라고 생각했다.<br />
+                    특히 죽음을 뜻하는 스페이드 13장엔 모두 악마의 이름이 들어
+                    있다.<br />지옥으로 떨어진 추락한 천사 '루시퍼'와 지옥의
+                    기존 지배자 '벨제붑'. 두 악마는 모든 것을 걸고 도박으로
+                    승부를 내기로 결정했다.
+                  </p>
+
+                  <div class="movie-score">
+                    <span>관람평</span>
+                    <strong>8.4</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="movie-btns">
+                <button
+                  type="button"
+                  class="like-btn"
+                  aria-label="타짜:벨제붑의 노래 좋아요"
+                  aria-pressed="false"
+                >
+                  <span class="heart-icon" aria-hidden="true"></span>
+                  <span class="like-count">332</span>
+                </button>
+
+                <a href="#" class="reserve-btn">예매</a>
+              </div>
+            </div>
+
+            <div class="movie-card">
+              <div class="poster">
+                <img src="./img/movie4.jpg" alt="박스오피스 4위 영화 포스터" />
+                <span class="rank">4</span>
+
+                <a
+                  href="#"
+                  class="movie-overlay"
+                  aria-label="부활남: 더 레드 상세정보"
+                >
+                  <p class="movie-summary">
+                    절친 '영하'(강기영)의 현실적인 쓴소리와 동생
+                    '예린'(김시아)의 든든한 지원에도<br />면접에서 떨어지기
+                    일쑤인 취업 준비생 '석환'(구교환).<br />
+                    여느 때와 다름없이 면접을 망치고 집으로 돌아온 그날 밤,
+                    '석환'은 낯선 이들의 습격을 받고 목숨을 잃는다.
+                  </p>
+
+                  <div class="movie-score">
+                    <span>관람평</span>
+                    <strong>0</strong>
+                  </div>
+                </a>
+              </div>
+
+              <div class="movie-btns">
+                <button
+                  type="button"
+                  class="like-btn"
+                  aria-label="부활남: 더 레드 좋아요"
+                  aria-pressed="false"
+                >
+                  <span class="heart-icon" aria-hidden="true"></span>
+                  <span class="like-count">533</span>
+                </button>
+
+                <a href="#" class="reserve-btn">예매</a>
+              </div>
+            </div>
+            <!-- //card -->
+          </div>
+          <!-- //카드 4개 -->
+
+          <!-- 빠른 메뉴 -->
+          <div class="quick-menu">
+            <div class="movie-search">
+              <label for="movie-search" class="sr-only">영화명 검색</label>
+              <input
+                id="movie-search"
+                name="movieName"
+                type="search"
+                placeholder="영화명을 입력해 주세요"
+              />
+              <button type="button" aria-label="영화 검색">
+                <img src="./img/search.png" alt="" />
+              </button>
+            </div>
+
+            <a href="#" class="quick-item">
+              <img src="./img/movie_time.png" alt="" />
+              <span>상영시간표</span>
+            </a>
+
+            <a href="#" class="quick-item">
+              <img src="./img/box_office.png" alt="" />
+              <span>박스오피스</span>
+            </a>
+
+            <a href="#" class="quick-item">
+              <img src="./img/ticket.png" alt="" />
+              <span>빠른예매</span>
+            </a>
+          </div>
+          <!-- //빠른 메뉴 -->
+
+          <!-- 스크롤 -->
+          <div class="scroll-down">
+            <img src="./img/mouse.png" alt="" />
+          </div>
+          <!-- //스크롤 -->
+        </div>
+      </section>
+      <!-- //section01 -->
+
+      <!-- section02 -->
+      <section class="benefit" aria-labelledby="benefit-title">
+        <!-- 혜택 콘텐츠 -->
+        <div class="benefit-content">
+          <div class="inner">
+            <!-- 제목 -->
+            <div class="benefit-title">
+              <h2 id="benefit-title">혜택</h2>
+              <a href="#" class="benefit-more" aria-label="혜택 더보기">
+                <img src="./img/plus.png" alt="" />
+              </a>
+            </div>
+            <!-- //제목 -->
+
+            <!-- 메인 콘텐츠 -->
+            <div class="benefit-main">
+              <!-- 왼쪽 -->
+              <div class="benefit-left">
+                <!-- 슬라이드 -->
+                <div class="benefit-slide" aria-label="혜택 안내">
+                  <div class="swiper benefit-swiper">
+                    <div class="swiper-wrapper">
+                      <!-- 슬라이드1 -->
+                      <article class="swiper-slide benefit-page">
+                        <div class="benefit-copy">
+                          <img
+                            src="./img/ticket_desc1.jpg"
+                            alt="메가박스 오리지널 티켓 1"
+                          />
+                        </div>
+
+                        <div class="benefit-image">
+                          <img
+                            src="./img/original_ticket1.jpg"
+                            alt="첫 번째 오리지널 티켓"
+                          />
+                        </div>
+                      </article>
+                      <!-- //슬라이드1 -->
+
+                      <!-- 슬라이드2 -->
+                      <article class="swiper-slide benefit-page">
+                        <div class="benefit-copy">
+                          <img
+                            src="./img/ticket_desc2.png"
+                            alt="메가박스 오리지널 티켓 2"
+                          />
+                        </div>
+
+                        <div class="benefit-image">
+                          <img
+                            src="./img/original_ticket2.png"
+                            alt="두 번째 오리지널 티켓"
+                          />
+                        </div>
+                      </article>
+                      <!-- //슬라이드2 -->
+
+                      <!-- 슬라이드3 -->
+                      <article class="swiper-slide benefit-page">
+                        <div class="benefit-copy">
+                          <img
+                            src="./img/ticket_desc3.png"
+                            alt="메가박스 오리지널 티켓 3"
+                          />
+                        </div>
+
+                        <div class="benefit-image">
+                          <img
+                            src="./img/original_ticket3.png"
+                            alt="세 번째 오리지널 티켓"
+                          />
+                        </div>
+                      </article>
+                      <!-- //슬라이드3 -->
+                    </div>
+                  </div>
+
+                  <div class="benefit-controls">
+                    <div class="benefit-pagination"></div>
+
+                    <button
+                      type="button"
+                      class="benefit-prev"
+                      aria-label="이전 혜택"
+                    >
+                      <img src="./img/button_prev.png" alt="" />
+                    </button>
+
+                    <button
+                      type="button"
+                      class="benefit-next"
+                      aria-label="다음 혜택"
+                    >
+                      <img src="./img/button_next.png" alt="" />
+                    </button>
+
+                    <button
+                      type="button"
+                      class="benefit-play"
+                      aria-label="자동재생 정지"
+                    >
+                      <img
+                        class="pause-icon"
+                        src="./img/button_pause.png"
+                        alt=""
+                      />
+                      <img
+                        class="play-icon"
+                        src="./img/button_play.png"
+                        alt=""
+                      />
+                    </button>
+
+                    <span class="benefit-count">1 / 3</span>
+                  </div>
+                </div>
+                <!-- //슬라이드 -->
+
+                <!-- 광고 -->
+                <div class="benefit-banner">
+                  <a href="#" class="banner-wide">
+                    <img src="./img/banner1.png" alt="혜택 배너 1" />
+                  </a>
+                  <a href="#" class="banner-small">
+                    <img src="./img/banner2.png" alt="혜택 배너 2" />
+                  </a>
+                </div>
+                <!-- //광고 -->
+              </div>
+              <!-- //왼쪽 -->
+
+              <!-- 오른쪽 -->
+              <div class="benefit-right">
+                <a href="#" class="benefit-poster">
+                  <img src="./img/movie_banner.jpg" alt="영화 프로모션 안내" />
+                </a>
+              </div>
+              <!-- //오른쪽 -->
+            </div>
+            <!-- //메인 콘텐츠 -->
+          </div>
+        </div>
+        <!-- //혜택 콘텐츠 -->
+
+        <!-- 하단 바로가기 -->
+        <div class="benefit-menu-area">
+          <div class="inner">
+            <ul class="benefit-menu">
+              <li>
+                <a href="#">
+                  <img src="./img/vip_rounge.png" alt="" />
+                  <span>VIP LOUNGE</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="./img/membership.png" alt="" />
+                  <span>멤버십</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="./img/discount_coupon.png" alt="" />
+                  <span>할인카드안내</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="./img/event.png" alt="" />
+                  <span>이벤트</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="./img/store.png" alt="" />
+                  <span>스토어</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- //하단 바로가기 -->
+      </section>
+      <!-- //section02 -->
+
+      <!-- section03 -->
+      <section class="curation" aria-labelledby="curation-title">
+        <div class="inner">
+          <!-- 제목 -->
+          <div class="curation-title">
+            <h2 id="curation-title">큐레이션</h2>
+
+            <a href="#" class="curation-more">
+              큐레이션 더보기 <img src="./img/plus.png" alt="" />
+            </a>
+          </div>
+          <!-- //제목 -->
+
+          <!-- 큐레이션 콘텐츠 -->
+          <div class="curation-content">
+            <!-- 대표 영화 -->
+            <div class="curation-main-movie">
+              <div class="curation-main-poster">
+                <img
+                  src="./img/curation.jpg"
+                  alt="[2026 NT Live] 인간 혐오자 포스터"
+                />
+                <img src="./img/curation_mega.png" alt="" />
+              </div>
+
+              <div class="curation-btns">
+                <a href="#" class="detail-btn">상세정보</a>
+                <a href="#" class="reserve-btn">예매</a>
+              </div>
+            </div>
+            <!-- //대표 영화 -->
+
+            <!-- 오른쪽 콘텐츠 -->
+            <div class="curation-info">
+              <!-- 영화 설명 -->
+              <div class="curation-description">
+                <p class="curation-category">#클래식소사이어티</p>
+
+                <h3>[2026 NT Live] 인간 혐오자</h3>
+
+                <div class="curation-text">
+                  <p>진실을 말하는 일은 결코 단순하지 않다.</p>
+
+                  <p>
+                    재능 있는 소설가 앨리스는 현대 사회를 지탱하는 교묘한 거짓과
+                    위선을 혐오한다. 그러나 그녀가 주변 사람들에게 진실을
+                    말할수록 거센 반발이 이어지고, 결국 모두가 침묵을 선택하는
+                    세상 속에서 자신의 신념을 지키는 대가와 마주하게 된다.
+                  </p>
+                </div>
+              </div>
+              <!-- //영화 설명 -->
+
+              <!-- 영화 목록 -->
+              <div class="curation-list">
+                <a href="#" class="curation-card">
+                  <div class="curation-poster">
+                    <img src="./img/curation_movie1.jpg" alt="" />
+                    <img src="./img/curation_bage.png" alt="" />
+                  </div>
+                  <p>어비정전 4K 리마스터링</p>
+                </a>
+
+                <a href="#" class="curation-card">
+                  <div class="curation-poster">
+                    <img src="./img/curation_movie2.jpg" alt="" />
+                    <img src="./img/curation_bage.png" alt="" />
+                  </div>
+                  <p>퍼펙트숏</p>
+                </a>
+
+                <a href="#" class="curation-card">
+                  <div class="curation-poster">
+                    <img src="./img/curation_movie3.jpg" alt="" />
+                    <img src="./img/curation_bage.png" alt="" />
+                  </div>
+                  <p>싱 어게인</p>
+                </a>
+
+                <a href="#" class="curation-card">
+                  <div class="curation-poster">
+                    <img src="./img/curation_movie4.jpg" alt="" />
+                    <img src="./img/curation_bage.png" alt="" />
+                  </div>
+                  <p>철들 무렵</p>
+                </a>
+              </div>
+              <!-- //영화 목록 -->
+            </div>
+            <!-- //오른쪽 콘텐츠 -->
+          </div>
+          <!-- //큐레이션 콘텐츠 -->
+        </div>
+      </section>
+      <!-- //section03 -->
+
+      <!-- section04 -->
+      <section class="megabox-info" aria-labelledby="megabox-info-title">
+        <div class="inner">
+          <!-- 메가박스 안내 -->
+          <div class="theater-guide">
+            <h2 id="megabox-info-title">메가박스 안내</h2>
+
+            <div class="guide-slider">
+              <button
+                type="button"
+                class="guide-prev"
+                aria-label="이전 특별관 보기"
+              >
+                <i class="bi bi-chevron-left" aria-hidden="true"></i>
+              </button>
+
+              <div class="guide-list">
+                <a href="#" class="guide-card">
+                  <img src="./img/dolby_cinema.png" alt="dolby cinema" />
+                </a>
+                <a href="#" class="guide-card">
+                  <img src="./img/dolby_vision.png" alt="dolby vision" />
+                </a>
+                <a href="#" class="guide-card">
+                  <img src="./img/mega_mx4d.png" alt="mx4d" />
+                </a>
+                <a href="#" class="guide-card">
+                  <img src="./img/mega_dolby.png" alt="mega dolby" />
+                </a>
+                <a href="#" class="guide-card">
+                  <img src="./img/mega_led.png" alt="mega led" />
+                </a>
+                <a href="#" class="guide-card">
+                  <img
+                    src="./img/boutique_private.png"
+                    alt="boutique private"
+                  />
+                </a>
+              </div>
+
+              <button
+                type="button"
+                class="guide-next"
+                aria-label="다음 특별관 보기"
+              >
+                <i class="bi bi-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <!-- //메가박스 안내 -->
+        </div>
+
+        <!-- 공지사항 -->
+        <div class="notice-area">
+          <div class="inner">
+            <div class="notice">
+              <span class="notice-category">지점</span>
+
+              <a href="#" class="notice-content">
+                <strong>[상암월드컵경기장]</strong>
+                <span>
+                  [상암월드컵경기장] 월드컵경기장 주차장 내 부분 보수공사로 인한
+                  주차 안내
+                </span>
+              </a>
+
+              <time class="notice-data" datetime="2026-09-21">
+                2026.09.21
+              </time>
+
+              <a href="#" class="notice-more">
+                더보기 <i class="bi bi-chevron-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- //공지사항 -->
+
+        <!-- 고객 서비스 -->
+        <div class="service-area">
+          <div class="inner">
+            <ul class="service-list">
+              <li>
+                <a href="#">
+                  <img src="./img/customer_service.png" alt="" />
+                  <span>고객센터</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/question.png" alt="" />
+                  <span>자주 묻는 질문</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/common.png" alt="" />
+                  <span>1:1 문의</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/groups.png" alt="" />
+                  <span>단체/대관문의</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/lost.png" alt="" />
+                  <span>분실물 문의/접수</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/boutique.png" alt="" />
+                  <span>더 부티크 프라이빗<br />대관예매</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- //고객 서비스 -->
+      </section>
+      <!-- //section04 -->
+    </main>
+
+    <!-- 하단 광고 -->
+    <div class="footer-ad">
+      <a href="#">
+        <img src="./img/footer_banner1.jpg" alt="하단 광고" />
+      </a>
+    </div>
+    <!-- //하단 광고 -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="inner">
+        <!-- 푸터 상단 -->
+        <div class="footer-top">
+          <!-- 푸터 메뉴 -->
+          <ul class="footer-menu">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">인재채용</a></li>
+            <li><a href="#">사회공헌</a></li>
+            <li><a href="#">제휴/광고/부대사업문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">위치기반서비스 이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">윤리경영</a></li>
+          </ul>
+          <!-- //푸터 메뉴 -->
+
+          <!-- 극장 찾기 -->
+          <button type="button" class="theater-search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <span>극장찾기</span>
+          </button>
+          <!-- //극장 찾기 -->
+        </div>
+        <!-- //푸터 상단 -->
+
+        <!-- 푸터 하단 -->
+        <div class="footer-bottom">
+          <!-- 로고 -->
+          <div class="footer-logo">
+            <img src="./img/logo_gray.png" alt="메가박스" />
+          </div>
+          <!-- //로고 -->
+
+          <!-- 회사 정보 -->
+          <div class="company-info">
+            <address>
+              서울특별시 강남구 테헤란로 87길 22 도심공항터미널 건물 408호
+              <span>ARS 1544-0070</span>
+            </address>
+
+            <p>
+              대표자명 홍정인, 남용석 · 개인정보보호책임자 김영호 ·
+              사업자등록번호 211-86-59478 · 통신판매업신고번호
+              2025-서울강남-00722
+            </p>
+
+            <p>COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved</p>
+          </div>
+          <!-- //회사 정보 -->
+
+          <!-- SNS -->
+          <ul class="footer-sns">
+            <li>
+              <a href="#">
+                <img src="./img/youtube_bage.png" alt="youtube" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./img/instagram_bage.png" alt="instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./img/facebook_bage.png" alt="facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./img/x_bage.png" alt="x" />
+              </a>
+            </li>
+          </ul>
+          <!-- //SNS -->
+        </div>
+        <!-- //푸터 하단 -->
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- 메인 광고 팝업 -->
+    <aside class="main-popup" aria-label="메가박스 이벤트 안내" hidden>
+      <button type="button" class="popup-close" aria-label="이벤트 팝업 닫기">
+        <span aria-hidden="true">×</span>
+      </button>
+
+      <!-- 광고 슬라이드 -->
+      <div class="swiper popup-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#">
+              <img src="./img/modal1.png" alt="메가 마니아 클럽 예매 오픈 알림 사용설명서">
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#">
+              <img src="./img/modal2.jpg" alt="메가박스 이벤트 안내">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- //광고 슬라이드 -->
+
+      <!-- 하단 컨트롤 -->
+      <div class="popup-bottom">
+        <div class="popup-controls">
+          <button type="button" class="popup-play" aria-label="자동재생 정지">
+            <img src="./img/button_pause.png" alt="">
+          </button>
+
+          <div class="popup-pagination"></div>
+        </div>
+
+        <label class="popup-today">
+          <input type="checkbox" class="popup-hide-today">
+          <span>하루동안 보지 않기</span>
+        </label>
+      </div>
+      <!-- //하단 컨트롤 -->
+    </aside>
+    <!-- //메인 광고 팝업 -->
+  </body>
+</html>
