@@ -222,7 +222,7 @@ if (benefitArea && typeof Swiper !== "undefined") {
 
   updateBenefitPlay();
 
-  benefitArea.addEventListener("focusin", function() {
+  benefitArea.addEventListener("focusin", function(event) {
     if (playButton.contains(event.target)) return;
 
     benefitSwiper.autoplay.stop();
@@ -360,6 +360,133 @@ if (mainPopup) {
   mainPopup.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closePopup();
+    }
+  });
+}
+
+const siteMapButton = document.querySelector(".menu-btn");
+const siteMapPanel = document.querySelector("#site-map");
+const siteMapHeader = document.querySelector(".header");
+const gnbMenuItems = document.querySelectorAll(".gnb-item");
+
+function clearGnbMenu() {
+  gnbMenuItems.forEach(function (item) {
+    item.classList.remove("is-open");
+  });
+
+  siteMapHeader.classList.remove("is-menu-open");
+}
+
+function openSiteMap() {
+  clearGnbMenu();
+
+  siteMapPanel.hidden = false;
+  siteMapPanel.setAttribute("aria-hidden", "false");
+
+  siteMapButton.classList.add("is-open");
+  siteMapButton.setAttribute("aria-expanded", "true");
+  siteMapButton.setAttribute("aria-label", "전체 메뉴 닫기");
+
+  siteMapHeader.classList.add("site-map-open");
+}
+
+function closeSiteMap() {
+  siteMapPanel.hidden = true;
+  siteMapPanel.setAttribute("aria-hidden", "true");
+
+  siteMapButton.classList.remove("is-open");
+  siteMapButton.setAttribute("aria-expanded", "false");
+  siteMapButton.setAttribute("aria-label", "전체 메뉴 열기");
+
+  siteMapHeader.classList.remove("site-map-open");
+}
+
+if (siteMapButton && siteMapPanel && siteMapHeader) {
+  siteMapButton.addEventListener("click", function () {
+    const isOpen = siteMapButton.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeSiteMap();
+    } else {
+      openSiteMap();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+
+    const isOpen = siteMapButton.getAttribute("aria-expanded") === "true";
+
+    if (!isOpen) return;
+
+    closeSiteMap();
+    siteMapButton.focus();
+  });
+}
+
+{
+  const guideElement = document.querySelector(".guide-swiper");
+  const guideMedia = window.matchMedia("(max-width: 760px)");
+
+  let guideSwiper = null;
+  let guideTimer = null;
+
+  function startGuideTimer() {
+    clearInterval(guideTimer);
+
+    guideTimer = setInterval(function () {
+      if (!guideSwiper) return;
+
+      if (guideSwiper.isEnd) {
+        guideSwiper.slideTo(0, 700);
+      } else {
+        guideSwiper.slideNext(700);
+      }
+    }, 2200);
+  }
+
+  function stopGuideTimer() {
+    clearInterval(guideTimer);
+    guideTimer = null;
+  }
+
+  function setGuideSwiper() {
+    if (!guideElement || typeof Swiper === "undefined") return;
+
+    if (guideMedia.matches && !guideSwiper) {
+      guideSwiper = new Swiper(guideElement, {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        slidesOffsetAfter: 12,
+        speed: 600,
+        grabCursor: true,
+        allowTouchMove: true,
+        observer: true,
+        observeParents: true,
+        updateOnWindowResize: true,
+      });
+
+      guideSwiper.update();
+      startGuideTimer();
+      return;
+    }
+
+    if (!guideMedia.matches && guideSwiper) {
+      stopGuideTimer();
+
+      guideSwiper.destroy(true, true);
+      guideSwiper = null;
+    }
+  }
+
+  setGuideSwiper();
+
+  guideMedia.addEventListener("change", setGuideSwiper);
+
+  guideElement?.addEventListener("touchend", function () {
+    if (guideSwiper) {
+      startGuideTimer();
     }
   });
 }

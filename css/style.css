@@ -63,19 +63,21 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 /* 광고 */
 .top-ad{
   position: relative;
-  height: 80px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   background-color: #fffce5;
 }
 
 .top-ad > img{
-  width: 1100px;
-  max-width: none;
-  height: 80px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  object-fit: cover;
+  display: block;
+  position: static;
+  width: min(100%, 1100px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transform: none;
+  object-fit: contain;
 }
 
 .top-ad-close{
@@ -107,7 +109,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 
 .header{
   position: relative;
-  z-index: 10;
+  z-index: 1000;
   height: 91px;
   margin-bottom: -91px;
   color: #fff;
@@ -235,6 +237,223 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 
 .header.is-menu-open::after{
   display: block;
+}
+
+.header-main .menu-btn{
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-btn .menu-open-icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.menu-close-icon{
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.menu-close-icon::before,
+.menu-close-icon::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 21px;
+  height: 2px;
+  background: #fff;
+  transform-origin: center;
+}
+
+.menu-close-icon::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close-icon::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.menu-btn.is-open .menu-open-icon{
+  display: none;
+}
+
+.menu-btn.is-open .menu-close-icon{
+  display: block;
+}
+
+.site-map{
+  position: static;
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+  color: #ddd;
+  background: #333;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+.site-map[hidden]{
+  display: none;
+}
+
+.site-map-inner{
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 46px 0 60px;
+}
+
+.site-map-inner > h2{
+  margin: 0 0 22px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.site-map-grid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-areas: 
+    "movie reserve theater event store my"
+    "benefit customer company policy . my";
+  gap: 52px 30px;
+}
+
+.site-map-movie{
+  grid-area: movie;
+}
+
+.site-map-reserve{
+  grid-area: reserve;
+}
+
+.site-map-theater{
+  grid-area: theater;
+}
+
+.site-map-event{
+  grid-area: event;
+}
+
+.site-map-store{
+  grid-area: store;
+}
+
+.site-map-my{
+  grid-area: my;
+}
+
+.site-map-benefit{
+  grid-area: benefit;
+}
+
+.site-map-customer{
+  grid-area: customer;
+}
+
+.site-map-company{
+  grid-area: company;
+}
+
+.site-map-policy{
+  grid-area: policy;
+}
+
+.site-map-group{
+  min-width: 0;
+  text-align: center;
+}
+
+.site-map-group h3{
+  margin: 0;
+  padding: 13px 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.site-map-group ul{
+  margin: 0;
+  padding: 12px 0 0;
+  list-style: none;
+}
+
+.site-map-group li{
+  margin: 0;
+}
+
+.site-map-group a{
+  display: block;
+  padding: 7px 3px;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.35;
+  text-decoration: none;
+  word-break: keep-all;
+  transition: color 0.2s ease;
+}
+
+.site-map-group a:hover,
+.site-map-group a:focus-visible{
+  color: #00a0c6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-map-group a:focus-visible,
+.menu-btn:focus-visible{
+  outline: 2px solid #00a0c6;
+  outline-offset: 3px;
+}
+
+.header.site-map-open{
+  height: auto;
+  margin-bottom: 0;
+  background-color: #080b12;
+  border-bottom: 0;
+}
+
+.header.site-map-open .site-map{
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+.header.site-map-open .header-inner{
+  height: 91px;
+}
+
+.header.site-map-open .sub-menu{
+  display: none !important;
+}
+
+.header.site-map-open::after{
+  display: none !important;
+  content: none;
 }
 
 /* 서브메뉴 */
@@ -516,33 +735,52 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 
 .movie-search{
   display: flex;
-  width: min(200px, calc(100% - 30px));
-  margin-inline: auto;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .movie-search input{
-  width: 100%;
+  flex: 0 1 170px;
+  width: 170px;
   min-width: 0;
-  height: 30px;
+  height: 34px;
+  padding: 0 0 0 10px;
   border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  outline: 0;
   background-color: transparent;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .movie-search input::placeholder{
-  color: #aaa;
+  color: #ccc;
+  opacity: 1;
 }
 
 .movie-search button{
-  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .movie-search button img{
-  width: 20px;
-  margin: auto;
+  display: block;
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
 }
 
 .quick-menu{
@@ -660,12 +898,13 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 
 .benefit-swiper .benefit-page{
-  display: flex;
+  display: grid;
+  grid-template-columns: clamp(240px, 45%, 300px) minmax(0, 1fr);
   height: 100%;
 }
 
 .benefit-copy{
-  flex: 0 0 45%;
+  width: 100%;
   min-width: 0;
   padding: 0;
 }
@@ -678,7 +917,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 
 .benefit-image{
-  flex: 0 0 55%;
+  width: 100%;
   min-width: 0;
   height: 100%;
 }
@@ -686,6 +925,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .benefit-image img{
   display: block;
   width: 100%;
+  min-width: 0;
   height: 100%;
   object-fit: contain;
   object-position: center bottom;
@@ -1093,15 +1333,10 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   line-height: 28px;
 }
 
-.guide-slider{
+.guide-slider.guide-swiper{
   position: relative;
-}
-
-.guide-list{
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 16px;
-  padding: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 .guide-card{
@@ -1117,43 +1352,12 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   width: 100%;
   height: 200%;
   max-width: none;
-  aspect-ratio: auto;
   object-fit: fill;
 }
 
 .guide-card:hover img,
 .guide-card:focus-visible img{
   transform: translateY(-50%);
-}
-
-.guide-prev, .guide-next{
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 60px;
-  border: 0;
-  background-color: transparent;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.guide-prev i,
-.guide-next i{
-  font-size: 36px;
-  line-height: 1;
-}
-
-.guide-prev{
-  left: -60px;
-}
-
-.guide-next{
-  right: -60px;
 }
 
 .notice-area{
@@ -1517,8 +1721,34 @@ a:focus-visible, button:focus-visible, input:focus-visible{
     width: 115px;
   }
 
+  .site-map-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: 
+      "movie reserve theater"
+      "event store my"
+      "benefit customer my"
+      "company policy my";
+  }
+
   .movie-list{
     gap: 20px;
+  }
+
+  .benefit-main{
+    display: grid;
+    grid-template-columns: minmax(0, 665fr) minmax(260px, 415fr);
+    gap: 20px;
+    align-items: end;
+  }
+
+  .benefit-left{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .benefit-right{
+    width: 100%;
+    min-width: 260px;
   }
 
   .benefit-controls .benefit-pagination{
@@ -1558,6 +1788,26 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 }
 
+@media (min-width: 761px){
+  .guide-slider.guide-swiper.swiper{
+    overflow: visible;
+  }
+
+  .guide-list.swiper-wrapper{
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 16px !important;
+    gap: 0;
+    width: 100%;
+  }
+
+  .guide-card.swiper-slide{
+    width: auto !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+}
+
 @media (max-width: 760px){
   .header{
     height: 150px;
@@ -1565,7 +1815,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 
   .header-util{
-    font-size: 11px;
+    display: none;
   }
 
   .util-left, .util-right{
@@ -1578,39 +1828,81 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 
   .header-main{
-    height: 112px;
+    position: relative;
+    height: 150px;
     align-items: flex-end;
     padding-bottom: 5px;
+  }
+
+  .logo{
+    top: 18px;
+    width: 130px;
   }
 
   .main-left, .main-right{
     width: 50%;
   }
 
-  .header-main button{
+  .header-main .menu-btn,
+  .header-main .search-btn,
+  .header-main .timetable-btn,
+  .header-main .mypage-btn{
     position: absolute;
-    top: 43px;
+    top: 24px;
   }
 
-  .menu-btn{
+  .header-main .menu-btn{
     left: 0;
   }
 
-  .search-btn{
-    left: 38px;
+  .header-main .search-btn{
+    left: 46px;
   }
 
-  .mypage-btn{
+  .header-main .timetable-btn{
+    right: 46px;
+  }
+
+  .header-main .mypage-btn{
     right: 0;
   }
 
-  .timetable-btn{
-    right: 38px;
+  .header.site-map-open{
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .header.site-map-open .header-inner{
+    height: 150px;
   }
 
   .gnb-item > a{
+    padding: 10px 4px;
     font-size: 15px;
-    padding-block: 10px;
+  }
+
+  .site-map-inner{
+    width: calc(100% - 30px);
+    padding: 32px 0 45px;
+  }
+
+  .site-map-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 
+      "movie reserve"
+      "theater event"
+      "store benefit"
+      "customer company"
+      "policy my";
+    gap: 35px 20px;
+  }
+
+  .site-map-group h3{
+    font-size: 16px;
+  }
+
+  .site-map-group a{
+    font-size: 14px;
   }
 
   .boxoffice{
@@ -1642,6 +1934,16 @@ a:focus-visible, button:focus-visible, input:focus-visible{
     margin-top: 30px;
   }
 
+  .movie-search{
+    padding-inline: 16px;
+  }
+
+  .movie-search input{
+    flex-basis: 150px;
+    width: 150px;
+    font-size: 13px;
+  }
+
   .quick-item:nth-child(3){
     border-left: 0;
   }
@@ -1651,7 +1953,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 
   .benefit-main{
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
   }
 
   .benefit-slide{
@@ -1669,9 +1972,9 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 
   .benefit-right{
-    max-width: 415px;
-    width: 100%;
-    margin-inline: auto;
+    width: min(100%, 360px);
+    min-width: 0;
+    margin: 0 auto;
   }
 
   .benefit-menu-area{
@@ -1741,13 +2044,34 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   }
 
   .curation-list{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 16px;
-    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 250px));
+    justify-content: center;
+    gap: 28px 24px;
+  }
+
+  .curation-card{
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .curation-poster{
+    width: 100%;
+  }
+
+  .curation-poster > img:first-child{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    aspect-ratio: 170 / 244;
+    object-fit: cover;
   }
 
   .theater-guide{
-    padding: 35px 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .theater-guide h2{
@@ -1755,15 +2079,25 @@ a:focus-visible, button:focus-visible, input:focus-visible{
     font-size: 24px;
   }
 
-  .guide-list{
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+  .guide-slider.guide-swiper{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
-  .guide-card{
+  .guide-list.swiper-wrapper{
+    display: flex;
+    gap: 0; 
+  }
+
+  .guide-list::-webkit-scrollbar{
+    display: none;
+  }
+
+  .guide-card.swiper-slide{
     flex: 0 0 150px;
+    width: 150px !important;
+    height: 150px;
   }
 
   .notice{
@@ -1815,6 +2149,47 @@ a:focus-visible, button:focus-visible, input:focus-visible{
     position: sticky;
     top: 0;
     margin: -10px -10px 4px auto;
+  }
+
+  .movie-search{
+    width: min(100%, 230px);
+  }
+
+  .movie-search input{
+    font-size: 12px;
+  }
+
+  .benefit-slide{
+    height: auto;
+  }
+
+  .benefit-swiper{
+    height: auto;
+  }
+
+  .benefit-swiper .benefit-page{
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: auto;
+  }
+
+  .benefit-copy{
+    width: min(100%, 300px);
+  }
+
+  .benefit-image{
+    width: min(100%, 365px);
+    height: auto;
+    margin-left: auto;
+  }
+
+  .benefit-image img{
+    height: auto;
+  }
+
+  .benefit-controls{
+    position: static;
+    margin-top: 20px;
   }
 }
 
